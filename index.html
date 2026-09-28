@@ -1,1 +1,73 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KOF ARENA</title><link rel="stylesheet" href="style.css"></head><body><header class="topbar"><div class="logo">KOF <span>ARENA</span></div><div class="status">BETA • 1v1</div></header><main id="app"><section id="home" class="screen active"><div class="hero"><div class="eyebrow">ONLINE ARCADE</div><h1>KOF 2002<br><strong>SEM DESCULPA.</strong></h1><p>Encontre uma sala, pague a entrada e vá para a luta.</p><button id="findGames" class="primary">PROCURAR JOGOS</button></div><div class="rules"><div><b>1v1</b><span>Duelo direto</span></div><div><b>PIX</b><span>Pagamento antes</span></div><div><b>10%</b><span>Taxa da Arena</span></div></div></section><section id="rooms" class="screen"><div class="section-head"><div><div class="eyebrow">KOF 2002</div><h2>SALAS DISPONÍVEIS</h2></div><button id="createRoom" class="secondary">+ CRIAR SALA</button></div><div id="roomList" class="rooms"></div><button id="backHome" class="textbtn">← voltar</button></section><section id="join" class="screen"><div class="card formcard"><button id="backRooms" class="textbtn">← salas</button><div class="eyebrow">ENTRAR NA SALA</div><h2 id="joinTitle">KOF 2002</h2><div class="matchinfo"><span id="joinOpponent">vs —</span><strong id="joinStake">R$ 10,00</strong></div><label>APELIDO<input id="nickname" maxlength="20" placeholder="Ex.: Rafa"></label><label>CHAVE PIX<input id="pixKey" maxlength="100" placeholder="CPF, e-mail, telefone ou chave aleatória"></label><label class="check"><input type="checkbox" id="termsCheck"><span>Li e concordo com os <button type="button" id="termsLink">Termos da Partida</button></span></label><button id="payBtn" class="primary" disabled>PAGAR E JOGAR</button><p id="payStatus" class="muted"></p></div></section><section id="game" class="screen"><div class="gamebar"><div><b>KOF ARENA</b><span id="gamePlayers">Rafa vs Brunão</span></div><div><span class="pot">POTE <b id="potValue">R$ 20,00</b></span><button id="controlsBtn" class="secondary">CONTROLES</button></div></div><div class="arcade"><div class="scanlines"></div><div class="fighters"><div>PLAYER 1</div><div class="vs">VS</div><div>PLAYER 2</div></div><div class="placeholder">EMULADOR / NETPLAY<br><small>próxima etapa: KOF 2002 no navegador</small></div></div><div class="testpanel"><b>PROTÓTIPO</b><span>Pagamento simulado • resultado manual</span><button id="winBtn" class="primary">SIMULAR VITÓRIA</button></div></section></main><dialog id="termsDialog"><div class="dialog"><button id="closeTerms" class="x">×</button><div class="eyebrow">TERMOS</div><h2>TERMOS DA PARTIDA</h2><ul><li>Partida individual 1v1, com valor de entrada definido na sala.</li><li>Os dois jogadores pagam antes do início.</li><li>A Arena retém 10% do valor total apostado; o vencedor recebe o saldo líquido.</li><li>O resultado da partida é determinado pelo jogo. Não há rematch.</li><li>Abandono/desconexão sem retorno dentro das regras da partida caracteriza derrota.</li><li>Trapaças, manipulação ou comportamento abusivo podem invalidar a partida.</li><li>Em produção, pagamentos e prêmios serão processados automaticamente por provedor compatível.</li><li>O jogador declara que atende aos requisitos legais aplicáveis.</li></ul><button id="acceptTerms" class="primary">ENTENDI</button></div></dialog><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KOF ARENA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><div class="logo">KOF <span>ARENA</span></div><div class="status">BETA • 1v1</div></header>
+<main id="app">
+<section id="home" class="screen active">
+  <div class="hero">
+    <div class="eyebrow">ONLINE ARCADE</div>
+    <h1>KOF 2002<br><strong>SEM DESCULPA.</strong></h1>
+    <p>Encontre uma sala, pague a entrada e vá para a luta.</p>
+    <button id="findGames" class="primary">PROCURAR JOGOS</button>
+  </div>
+  <div class="rules"><div><b>1v1</b><span>Duelo direto</span></div><div><b>PIX</b><span>Pagamento antes</span></div><div><b>10%</b><span>Taxa da Arena</span></div></div>
+</section>
+
+<section id="rooms" class="screen">
+  <div class="section-head"><div><div class="eyebrow">KOF 2002</div><h2>SALAS DISPONÍVEIS</h2></div><button id="createRoom" class="secondary">+ CRIAR SALA</button></div>
+  <div id="roomList" class="rooms"></div>
+  <button id="backHome" class="textbtn">← voltar</button>
+</section>
+
+<section id="join" class="screen">
+  <div class="card formcard">
+    <button id="backRooms" class="textbtn">← salas</button>
+    <div class="eyebrow">ENTRAR NA SALA</div><h2 id="joinTitle">KOF 2002</h2>
+    <div class="matchinfo"><span id="joinOpponent">vs —</span><strong id="joinStake">R$ 10,00</strong></div>
+    <label>APELIDO<input id="nickname" maxlength="20" placeholder="Ex.: Rafa"></label>
+    <label>CHAVE PIX<input id="pixKey" maxlength="100" placeholder="CPF, e-mail, telefone ou chave aleatória"></label>
+    <label class="check"><input type="checkbox" id="termsCheck"><span>Li e concordo com os <button type="button" id="termsLink">Termos da Partida</button></span></label>
+    <button id="payBtn" class="primary" disabled>PAGAR E JOGAR</button>
+    <p id="payStatus" class="muted"></p>
+  </div>
+</section>
+
+<section id="game" class="screen">
+  <div class="gamebar">
+    <div><b>KOF ARENA</b><span id="gamePlayers">Rafa vs Brunão</span></div>
+    <div><span class="pot">POTE <b id="potValue">R$ 20,00</b></span><button id="controlsBtn" class="secondary">CONTROLES</button></div>
+  </div>
+
+  <div class="emulator-card">
+    <div class="emulator-head">
+      <div><b>EMULADOR NO NAVEGADOR</b><small id="emulatorStatus">Carregue uma ROM que você tenha direito de usar.</small></div>
+      <label class="rom-button">CARREGAR ROM
+        <input id="romFile" type="file" accept=".zip,.7z,.chd,.bin,.cue,.rom,.nes,.smc,.sfc,.gba,.gb,.gbc">
+      </label>
+    </div>
+    <div id="game" class="emulator"></div>
+    <div id="romHint" class="rom-hint">O arquivo é carregado localmente no seu navegador; não é enviado para o GitHub.</div>
+  </div>
+
+  <div class="match-actions">
+    <div><b>PARTIDA</b><span id="matchState">Aguardando jogo</span></div>
+    <div class="winner-buttons">
+      <button id="p1WinBtn" class="primary">PLAYER 1 VENCEU</button>
+      <button id="p2WinBtn" class="secondary">PLAYER 2 VENCEU</button>
+    </div>
+  </div>
+  <div class="testpanel"><b>PROTÓTIPO</b><span>Resultado ainda é manual; a próxima etapa será validar o resultado de forma confiável no backend.</span></div>
+</section>
+</main>
+
+<dialog id="termsDialog"><div class="dialog"><button id="closeTerms" class="x">×</button><div class="eyebrow">TERMOS</div><h2>TERMOS DA PARTIDA</h2><ul>
+<li>Partida individual 1v1, com valor de entrada definido na sala.</li><li>Os dois jogadores pagam antes do início.</li><li>A Arena retém 10% do valor total apostado; o vencedor recebe o saldo líquido.</li><li>O resultado da partida é determinado pelo jogo. Não há rematch.</li><li>Abandono/desconexão sem retorno dentro das regras da partida caracteriza derrota.</li><li>Trapaças, manipulação ou comportamento abusivo podem invalidar a partida.</li><li>Em produção, pagamentos e prêmios serão processados automaticamente por provedor compatível.</li><li>O jogador declara que atende aos requisitos legais aplicáveis.</li>
+</ul><button id="acceptTerms" class="primary">ENTENDI</button></div></dialog>
+<script src="app.js"></script>
+</body></html>
